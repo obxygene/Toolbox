@@ -2,7 +2,7 @@
   // UI and editor tweaks
   "editor.minimap.enabled": false,
   "workbench.list.smoothScrolling": false,
-  "workbench.tree.indent": 8,
+  "workbench.tree.indent": 4,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": null,
   "breadcrumbs.enabled": false,
@@ -14,22 +14,26 @@
   "editor.renderControlCharacters": false,
   "editor.semanticHighlighting.enabled": false,
   "editor.codeLens": false,
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.inlayHints.enabled": "off",
+  // Indentation: fix to 4 spaces (no auto-detection)
+  "editor.detectIndentation": false,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
 
   // Limit concurrent work and caching
   "workbench.editor.enablePreview": true,
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": 5,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 5,
   "files.maxMemoryForLargeFilesMB": 64,
   "search.followSymlinks": false,
   "search.useIgnoreFiles": true,
   "search.useGlobalIgnoreFiles": true,
-  "scm.diffDecorationsGutterWidth": 0,
+  "scm.diffDecorationsGutterWidth": 1,
 
   // Telemetry and crash reporter (reduce background usage)
   "telemetry.telemetryLevel": "off",
-  "telemetry.enableCrashReporter": false,
 
   // Disable auto-fetch and heavy git features for large repos
   "git.autofetch": false,
@@ -71,6 +75,18 @@
   // LaTeX Workshop: disable auto build
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.autoClean.run": "onBuilt",
+  // Use SumatraPDF as the external viewer with forward search
+  "latex-workshop.view.pdf.viewer": "external",
+  "latex-workshop.view.pdf.external.viewer.command": "D:\\General Program Files\\SumatraPDF\\SumatraPDF.exe",
+  "latex-workshop.view.pdf.external.viewer.args": [
+    "-reuse-instance",
+    "-forward-search",
+    "%TEX%",
+    "%LINE%",
+    "-inverse-search",
+    "code -g \"%f:%l\"",
+    "%PDF%"
+  ],
   "latex-workshop.view.outline.sections": [
     "part",
     "chapter",
